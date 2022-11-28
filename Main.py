@@ -1,17 +1,10 @@
-from gtts import gTTS
-import os
-from playsound import playsound
+import pyttsx3
 
+engine = pyttsx3.init()
 
-#Text Input
+#input
 Text = input()
 
-#Conversion
-TextSound= gTTS(Text)
-
-#File management
-os.remove('text.mp3')
-TextSound.save('text.mp3')
-
-#text output
-playsound('text.mp3')
+#Output
+engine.say(Text)
+engine.runAndWait()
